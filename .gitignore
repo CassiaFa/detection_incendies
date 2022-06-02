@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# files
+*.zip
+*.tar.gz
+custom_data.yaml
+*.jpg
+*.mp4
+script.py
+capture.py
+
+# folders
+train_data
+runs
