@@ -56,7 +56,7 @@ class model_detection():
         
         x_shape, y_shape = image.shape[1], image.shape[0]
 
-        print("\n ========== \n", n, "\n ========== \n")
+        print("\n ========== \n", cord, "\n ========== \n")
 
         for i in range(n):
             row = cord[i]
