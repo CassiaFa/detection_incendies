@@ -58,9 +58,9 @@ class model_detection():
         n = len(labels)
         
 
-        print("\n ==== label and coord ====== \n", n, cord[i], "\n ========== \n")
 
         for i in range(n):
+            print("\n ==== label and coord ====== \n", n, cord[i], "\n ========== \n")
             row = cord[i]
             if row[4] >= 0.3:
                 x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[0] + row[2]), int(row[1] + row[3])
