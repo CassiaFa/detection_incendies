@@ -28,11 +28,12 @@ class cam():
         image = results.imgs[0]
 
         labels, cord = results.xyxyn[0][:, -1], results.xyxyn[0][:, :-1]
+        
+        print("\n ========== \n", len(image), "\n ========== \n")
 
         n = len(labels)
         x_shape, y_shape = image.shape[1], image.shape[0]
         
-        print("\n ========== \n", x_shape, y_shape, "\n ========== \n")
 
         for i in range(n):
             row = cord[i]
