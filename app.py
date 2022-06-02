@@ -29,7 +29,7 @@ class VideoProcessor(VideoTransformerBase):
 
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         
-        img = detector.cam_detection(frame)
+        img = detector.cam_detection(img)
 
         
         return av.VideoFrame.from_ndarray(img, format="bgr24")
