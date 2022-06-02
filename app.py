@@ -32,7 +32,7 @@ class VideoProcessor(VideoTransformerBase):
         img = detector.cam_detection(img)
 
         
-        return av.VideoFrame.from_ndarray(img, format="bgr24")
+        return av.VideoFrame.from_ndarray(img, format="rgb24")
 
 def main():
     '''
