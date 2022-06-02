@@ -8,3 +8,4 @@ av==9.2.0
 opencv-python-headless==4.5.5.64
 torch==1.11.0
 pyyaml==6.0
+torchvision==0.12.0
