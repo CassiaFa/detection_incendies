@@ -7,3 +7,4 @@ streamlit_webrtc==0.36.1
 av==9.2.0
 opencv-python-headless==4.5.5.64
 torch==1.11.0
+pyyaml==6.0
