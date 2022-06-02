@@ -26,7 +26,10 @@ class VideoProcessor(VideoTransformerBase):
     def recv(self, frame):
         img = frame.to_ndarray(format="rgb24")
         
+        print("\n ========== \n", type(img), "\n ========== \n")
+        
         img = detector.image_detection(frame)
+
         
         return av.VideoFrame.from_ndarray(img, format="bgr24")
 
