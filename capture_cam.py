@@ -62,7 +62,7 @@ class model_detection():
             print("\n ==== label and coord ====== \n", n, cord[i], "\n ========== \n")
             row = cord[i]
             if row[4] >= 0.3:
-                x1, y1, x2, y2 = int(row[0]*x_shape), int(row[1]*y_shape), int(row[2]*x_shape), int(row[1]*y_shape)
+                x1, y1, x2, y2 = int(row[0]*x_shape), int(row[1]*y_shape), int(row[2]*x_shape), int(row[3]*y_shape)
                 print("\n ========== \n", x1, y1, x2, y2, "\n ========== \n")
                 # x3, y3, x4, y4 = int(row[0]), int(row[1]), int(row[2]*x_shape), int(row[3]*y_shape)
                 bgr = (0, 255, 0)
