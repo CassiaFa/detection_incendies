@@ -24,7 +24,7 @@ def load_image(img_path):
 
 class VideoProcessor(VideoTransformerBase):
     def recv(self, frame):
-        img = frame.to_ndarray(format="bgr24")
+        img = frame.to_ndarray(format="rgb24")
         
         img = detector.image_detection(frame)
         
