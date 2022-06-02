@@ -48,15 +48,17 @@ class model_detection():
     def cam_detection(self, image):
         results = self.model(image)
 
+        x_shape, y_shape = image.shape[1], image.shape[0]
+        print("\n ===== shape ===== \n", x_shape, y_shape, "\n ========== \n")
+
         image = results.imgs[0]
 
         labels, cord = results.xyxyn[0][:, -1], results.xyxyn[0][:, :-1]
 
         n = len(labels)
         
-        x_shape, y_shape = image.shape[1], image.shape[0]
 
-        print("\n ========== \n", cord, "\n ========== \n")
+        print("\n ==== label and coord ====== \n", n, cord[i], "\n ========== \n")
 
         for i in range(n):
             row = cord[i]
