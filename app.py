@@ -17,6 +17,7 @@ def load_image(img_path):
     im = Image.open(img_path)
     return im
 
+@st.cache
 def load_model(model_name):
     detector = model_detection(model_name=model_name)
 
