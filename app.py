@@ -27,7 +27,7 @@ class VideoProcessor(VideoTransformerBase):
         img = frame
         # img = frame.to_ndarray(format="rgb24")
         
-        # print("\n ========== \n", type(img), "\n ========== \n")
+        print("\n ========== \n", type(img), "\n ========== \n")
 
         # img = detector.image_detection(frame)
 
