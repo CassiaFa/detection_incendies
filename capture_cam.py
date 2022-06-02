@@ -45,6 +45,26 @@ class cam():
 
         return image
 
+    def cam_detection(self, image):
+        results = self.model(image)
+
+        image = results.imgs[0]
+
+        labels, cord = results.xyxyn[0][:, -1], results.xyxyn[0][:, :-1]
+
+        n = len(labels)
+        
+
+        for i in range(n):
+            row = cord[i]
+            if row[4] >= 0.3:
+                x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[0] + row[2]), int(row[1] + row[3])
+                bgr = (0, 255, 0)
+                cv2.rectangle(image, (x1, y1), (x2, y2), bgr, 2)
+                cv2.putText(image, f"{self.classes[int((labels[i]))]}  {row[4]:.2f}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
+
+        return image
+
     def __call__(self, capture_index):
 
         self.cam = cv2.VideoCapture(capture_index)
