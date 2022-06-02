@@ -56,15 +56,17 @@ class model_detection():
         
         x_shape, y_shape = image.shape[1], image.shape[0]
 
+        print("\n ========== \n", x_shape, y_shape, "\n ========== \n")
+
         for i in range(n):
             row = cord[i]
             if row[4] >= 0.3:
                 x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[0] + row[2]), int(row[1] + row[3])
-                x3, y3, x4, y4 = int(row[0]), int(row[1]), int(row[2]*x_shape), int(row[3]*y_shape)
+                # x3, y3, x4, y4 = int(row[0]), int(row[1]), int(row[2]*x_shape), int(row[3]*y_shape)
                 bgr = (0, 255, 0)
                 cv2.rectangle(image, (x1, y1), (x2, y2), bgr, 2)
-                cv2.rectangle(image, (x3, y3), (x4, y4), bgr, 3)
-                cv2.putText(image, f"{self.classes[int((labels[i]))]}  {row[4]:.2f}", (x_shape/2, y_shape/2), cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
+                # cv2.rectangle(image, (x3, y3), (x4, y4), bgr, 3)
+                cv2.putText(image, f"{self.classes[int((labels[i]))]}  {row[4]:.2f}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
 
         return image
 
