@@ -10,17 +10,17 @@ import av
 from capture_cam import *
 
 
-@st.cache
-def load_model(model_name):
-    detector = cam(model_name=model_name)
-
-    return detector
 
 @st.cache
 def load_image(img_path):
     """load"""
     im = Image.open(img_path)
     return im
+
+def load_model(model_name):
+    detector = model_detection(model_name=model_name)
+
+    return detector
 
 class VideoProcessor(VideoTransformerBase):
     def recv(self, frame):

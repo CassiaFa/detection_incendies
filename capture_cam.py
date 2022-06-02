@@ -1,7 +1,7 @@
 import torch
 import cv2
 
-class cam():
+class model_detection():
 
     def __init__(self, model_name):
         self.model = self.load_model(model_name)
