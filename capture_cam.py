@@ -61,6 +61,7 @@ class model_detection():
                 x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[0] + row[2]), int(row[1] + row[3])
                 bgr = (0, 255, 0)
                 cv2.rectangle(image, (x1, y1), (x2, y2), bgr, 2)
+                cv2.rectangle(image, (x2, y1), (x1, y2), bgr, 3)
                 cv2.putText(image, f"{self.classes[int((labels[i]))]}  {row[4]:.2f}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 0.9, bgr, 2)
 
         return image
