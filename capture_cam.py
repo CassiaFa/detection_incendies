@@ -48,10 +48,9 @@ class model_detection():
     def cam_detection(self, image):
         results = self.model(image)
 
-        x_shape, y_shape = image.shape[1], image.shape[0]
-        print("\n ===== shape ===== \n", x_shape, y_shape, "\n ========== \n")
-
         image = results.imgs[0]
+
+        x_shape, y_shape = image.shape[1], image.shape[0]
 
         labels, cord = results.xyxyn[0][:, -1], results.xyxyn[0][:, :-1]
 
@@ -63,7 +62,7 @@ class model_detection():
             print("\n ==== label and coord ====== \n", n, cord[i], "\n ========== \n")
             row = cord[i]
             if row[4] >= 0.3:
-                x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[0] + row[2]), int(row[1] + row[3])
+                x1, y1, x2, y2 = int(row[0]), int(row[1]), int(row[2]*x_shape), int(row[1]*y_shape)
                 print("\n ========== \n", x1, y1, x2, y2, "\n ========== \n")
                 # x3, y3, x4, y4 = int(row[0]), int(row[1]), int(row[2]*x_shape), int(row[3]*y_shape)
                 bgr = (0, 255, 0)
